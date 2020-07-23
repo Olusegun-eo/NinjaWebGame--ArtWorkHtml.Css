@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://127.0.0.1:5501/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>MarioClub</title>
+<link rel="stylesheet" href="./MarioClub_files/styles.css"></head>
+<body>
+  
+  <header>
+    <h1>MarioClub</h1>
+  </header>
+  <section class="banner">
+    <img src="./MarioClub_files/banner.png" alt="mario welcome banner" class="src">
+    <div class="welcome">
+      <h2>Welcome to <br> <span>MarioClub</span></h2>
+    </div>
+  </section>
+  <nav class="main-nav">
+    <ul>
+      <li><a href="http://127.0.0.1:5501/join.html" class="join" target="_blank">Join the club</a></li>
+      <li><a href="http://127.0.0.1:5501/news.html" target="_blank">Latest news</a></li>
+      <li><a href="http://127.0.0.1:5501/games.html">New games</a></li>
+      <li><a href="http://127.0.0.1:5501/contact.html" target="_blank">Contact</a></li>
+    </ul>
+  </nav>
+
+  <article>
+    <h2>It's me, Mario</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium fugiat dolores et harum, consequatur ea! Pariatur quos explicabo eius ratione magnam laudantium eligendi vel, ullam, vitae blanditiis recusandae ad odit? Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate nisi nihil possimus excepturi quasi dolorum a ad voluptatem unde, perspiciatis enim obcaecati, eum modi quo reiciendis exercitationem officiis sed doloremque! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam dignissimos dolores explicabo veniam animi vel, architecto, nemo dicta est quibusdam quam iure tempora perspiciatis error voluptatem reprehenderit, quo laudantium. Beatae?</p>
+  </article>
+  <ul class="images">
+    <li><img src="./MarioClub_files/thumb-1.png" alt="mario thumb-1"></li>
+    <li><img src="./MarioClub_files/thumb-2.png" alt="mario thumb-2"></li>
+  </ul>
+  <main></main>
+<section class="join">
+  <h2>Join Today!</h2>
+  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, architecto nemo! Consectetur dignissimos animi magnam voluptas, earum suscipit rerum possimus laborum, accusamus vitae provident! Dolorem ullam id quos ipsam nisi.</p>
+  <form action="http://127.0.0.1:5501/index.html">
+    <input type="email" name="eamil" placeholder="type email &amp; press enter" required="">
+  </form>
+</section>
+<footer class="copyright">Copyright 2020 MarioClub</footer>
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+
+<!-- https://www.github.com/iamshunjp/html-and-css-crash-course --></body></html>

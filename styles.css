@@ -1,0 +1,80 @@
+/* About static position */
+header{
+  /* position: static; */
+/*   position: relative;
+  left: 100px;
+  top: 100px; */
+
+
+  /* Fixed Position */
+/* smthg with fixed pstn is pstn relative to viewPort(the section of d browser that we actually see i.e d browser window gangan) itself */
+/* Now i wnt my header relatively fixed wit viewport...Goto the top of my css */
+  position: fixed;
+  background-color: #f63232;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  /* Zindex prop bring things forward or push them back on d page so...Z-index>0 brings frwrd but Z-index<0 pushes backwrd*/
+  /* let's bring the header forward...Z-indx=1 */
+  z-index: 1;
+  top: 0px;
+  left: 0px;
+}
+header h1{
+  color: white;
+  border: 8px solid white;
+  padding: 6px 12px;
+/*To remove d lines around it..use display:inline-block*/
+  display: inline-block;
+  border-radius: 36px;
+}
+/* About Static&Absolute position */
+section.banner{
+  position:relative;
+}
+section.banner img{
+max-width: 100%;
+}
+
+/* wen put elmnts in abs pos:we take it out of normal doc flow&looses it's space& we loose it's original space */
+.banner div.welcome{
+  position: absolute;
+  left:0px;
+  top: 30%;
+/*   if u put top in% it allows welcome to shrink and stretches */
+  background-color: #feb614;
+  color: #fff;
+  padding:;
+}
+.banner .welcome h2{
+  font-size: 74px;
+}
+.banner .welcome h2 span{
+  font-size: 1.3em;
+  /* em= parent's fontSize*1.3 */
+}
+
+/* STICKY POSITION===static pstn + fixed pstn*/
+/* It starts with static and later Fixed pstn */
+nav.main-nav{
+  background-color: #f4f4f4;
+  padding: 20px;
+
+}
+
+nav.main-nav ul{
+  white-space: nowrap;
+  max-width: 1200px;/*This is central columm*/
+  margin: 0 auto;/*top&bottom=0 and auto means for left&right if there is any left over space i'm goint to apply it..inShort...it centralizes it in the middle*/
+}
+
+nav.main-nav li{
+   width: 25%;/*So that they can spread across Note:if it not in % it will not spread*/
+   display: inline-block;/*This maks them sit next to each other*/
+   font-size: 24px;/*the last one goes2d nxt line.This is a quirk of using inline block& 25% width...They should all add up on the same row....To rectify this...create a rule ontop for the parent elemnt(nav ul) and set white-space: nowrap;*/
+ }
+
+ nav.main-nav a{
+   text-decoration: none;
+   color: #4b4b4b;
+ }
