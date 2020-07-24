@@ -1,3 +1,10 @@
+body, ul, li, h1, h2, a{
+  margin: 0;
+  padding: 0;
+  font-family: arial;/*This is a web safe font...It's enuf 2giv d body of a fontFamily Arial bcos will cascade into d rest of d rules tru inheritance */
+  /*We need 2adjust d nav now bcos d font was a dffrnt size....Goto nav.main-nav*/
+}
+
 /* About static position */
 header{
   /* position: static; */
@@ -39,19 +46,19 @@ max-width: 100%;
 /* wen put elmnts in abs pos:we take it out of normal doc flow&looses it's space& we loose it's original space */
 .banner div.welcome{
   position: absolute;
-  left:0px;
+  left: 0px;
   top: 30%;
 /*   if u put top in% it allows welcome to shrink and stretches */
   background-color: #feb614;
   color: #fff;
-  padding:;
+  padding: 30px;
 }
 .banner .welcome h2{
   font-size: 74px;
 }
 .banner .welcome h2 span{
   font-size: 1.3em;
-  /* em= parent's fontSize*1.3 */
+  /* em= parent's fontSize*1.3 =>74*1.3px*/
 }
 
 /* STICKY POSITION===static pstn + fixed pstn*/
@@ -59,7 +66,9 @@ max-width: 100%;
 nav.main-nav{
   background-color: #f4f4f4;
   padding: 20px;
-
+/*Pstn:sticky & at 148px to it will become fixed(stick) from static while navigating(srcolling) the veiwport */
+  position: sticky;
+  top: 98px;
 }
 
 nav.main-nav ul{
@@ -71,10 +80,68 @@ nav.main-nav ul{
 nav.main-nav li{
    width: 25%;/*So that they can spread across Note:if it not in % it will not spread*/
    display: inline-block;/*This maks them sit next to each other*/
-   font-size: 24px;/*the last one goes2d nxt line.This is a quirk of using inline block& 25% width...They should all add up on the same row....To rectify this...create a rule ontop for the parent elemnt(nav ul) and set white-space: nowrap;*/
+   font-size: 24px;/*the last one goes2d nxt line.This is a quirk of using inline block& 25% width...They should all add up on the same row....To rectify this...create a rule ontop for the parent elemnt(nav ul) and set white-space: nowrap; */
  }
 
  nav.main-nav a{
    text-decoration: none;
    color: #4b4b4b;
  }
+/*CSS resetting the Layout using the default browser settings properties...Goto d top..body,ul, etc*/
+nav.main-nav a.join{
+  color: #f63232;
+}
+main{
+  max-width: 100%;/*This means that this will inherit whateva d width of the browser's veiwport this page gets opened or loaded*/
+  width: 1200px; /*this means if a page or browser is 2000px wide then d width is going to be 1200px. If i now add margin to it, the it bring page to central column....margin:80px auto  & padding: 0 40px*/
+  margin: 80px auto;
+  padding: 0 40px;
+  /*If u inspect this,u will noice dat d nav is gone beyond d page despite d fact that we've centralizes it...This is bcos we've added padding>>it is now 100%width+padding.....To rectify this use a prop called box-sizing: border-box;*/
+  box-sizing: border-box;/*this will incorporate padding into total width*/
+}
+main article h2{
+  color: #f63232;
+  font-size: 48px;
+}
+main article p{
+  line-height: 2em;
+  color: #4b4b4b;
+}
+main ul.images{
+  text-align: center;
+  margin: 80px 0;
+  list-style-type: none;
+  white-space: nowrap;
+  }
+  main ul.images li{
+    display: inline-block;/*for imgs 2sit nxt 2each other*/
+    width: 40%;/*For d img 2spread across*/
+    margin: 20px 5%;/*now with additn of 5% width of right&left....this makes a toatal width of 50%width for each li.....now with this d img r sitting on each other,to solve this Goto d parent's tag==>.images{whtites-pace: nowrap}*/
+  }
+  /* set the image size of the imgs equal to parent's width */
+.images li img{
+  max-width: 100%;/*this means 100% of d parent's width */
+  /**/
+}
+section.join{
+  background-color: #f4f4f4;
+  text-align: center;
+  padding: 60px 20px;
+  color: #4b4b4b;
+}
+section.join h2{
+  font-size: 36px;
+}
+form input{
+  margin: 20px 0;
+  padding: 10px 20px;
+  border-radius: 28px;
+  font-size: 24px;
+  border: 4px solid white;
+}
+footer{
+  background: #f63232;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
