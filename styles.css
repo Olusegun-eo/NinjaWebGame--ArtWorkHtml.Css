@@ -145,3 +145,35 @@ footer{
   text-align: center;
   color: white;
 }
+
+/* Pseudo Classes*/
+/* -Style elements wen they're in a particular state such as */
+/* when we hover overe elements: :hover
+when a form field is in focus:  :focus
+when an element is the first child of the parent element: :first-child*/ 
+
+/* Hover over the links: make them underline wen hover over them */
+nav.main-nav a:hover{
+  text-decoration: underline;
+  /* background-color: pink;
+  padding: 3px; */
+}
+/*Position:relative...>is to shiftup elemnts out of their original paces*/
+main ul.images li:hover{
+  position: relative;
+  top: -4px;/*OR=== bottom:4px*/
+  /*hover this img by moving up by-4px*/
+}
+/* Focus Pseudo Class */
+form input:focus{
+  border: 4px dashed #4b4b4b;
+  outline: none;/*removing the border is not a best practise*/
+}
+
+/* Valid Pseudo Class:...input form comes with validation..eg email: Wat this does is as soon i typed in valid emial it will show green or smthg*/
+form input:valid{
+  border: 4px solid #71d300;
+}
+
+/*:first-child Pseudo Class */
+/* a :first-child can target d child of parent elemnt wen it's d first child inside that parent eg "join the club"in a nav bar*/
