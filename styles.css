@@ -44,19 +44,19 @@ max-width: 100%;
 }
 
 /* wen put elmnts in abs pos:we take it out of normal doc flow&looses it's space& we loose it's original space */
-.banner div.welcome{
+div.welcome{
+  background-color: #feb614;
+  color: #fff;
+  padding: 30px;
   position: absolute;
   left: 0px;
   top: 30%;
 /*   if u put top in% it allows welcome to shrink and stretches */
-  background-color: #feb614;
-  color: #fff;
-  padding: 30px;
 }
-.banner .welcome h2{
+ div.welcome h2{
   font-size: 74px;
 }
-.banner .welcome h2 span{
+div.welcome h2 span{
   font-size: 1.3em;
   /* em= parent's fontSize*1.3 =>74*1.3px*/
 }
@@ -68,7 +68,7 @@ nav.main-nav{
   padding: 20px;
 /*Pstn:sticky & at 148px to it will become fixed(stick) from static while navigating(srcolling) the veiwport */
   position: sticky;
-  top: 98px;
+  top: 100px;
 }
 
 nav.main-nav ul{
@@ -107,13 +107,13 @@ main article p{
   line-height: 2em;
   color: #4b4b4b;
 }
-main ul.images{
+ ul.images{
   text-align: center;
   margin: 80px 0;
   list-style-type: none;
   white-space: nowrap;
   }
-  main ul.images li{
+   ul.images li{
     display: inline-block;/*for imgs 2sit nxt 2each other*/
     width: 40%;/*For d img 2spread across*/
     margin: 20px 5%;/*now with additn of 5% width of right&left....this makes a toatal width of 50%width for each li.....now with this d img r sitting on each other,to solve this Goto d parent's tag==>.images{whtites-pace: nowrap}*/
@@ -177,3 +177,97 @@ form input:valid{
 
 /*:first-child Pseudo Class */
 /* a :first-child can target d child of parent elemnt wen it's d first child inside that parent eg "join the club"in a nav bar*/
+/* nav.main-nav a.join:first-child{
+  border: 6px solid #f63232
+} */
+
+/* Pseudo Elements */
+main article p::first-line{
+  /*This means style the first line of article paragraph to have the following*/
+  font-weight: bold;
+  font-size: 1.2em;
+}
+section.join p::first-letter{
+  font-size: 1.5em;
+}
+p::selection{
+  background-color: #f63232;/*this means if u highlight any part of d paragraph on this page d color bcmes red*/
+  color: white;
+}
+p::after{
+  content: '...';
+  /* this is used to inject content into ur elemtns ::before or ::after*/
+}
+
+/* Responsive Design */
+/* Media Queries: Tell d browser how to style an elemnt @ prticular viewport dimenaions(width) on dffrnt devices*/
+
+/* MEDIA QUERY SYNTAX*/
+/* @media(means: d media query) screen(we're targeting all devices dat hv a screen i.e desktop computers, laptops,mobile tarblets) and(here d condition..eg max-width:1400px;)it means this style we placehere will apply only to devices from 1400px below but will not apply to devices higher than that...CONVERSELY this cud be min-width: 800px;meaning, i wnt this style apply to devices with minimum width of 800px but not below it.
+{
+  We can grab our selector and style them here with properties we wnt to override wen this codition is applied...eg welcome nav
+}) */
+
+@media screen and (max-width: 1400px) {
+   div.welcome h2{
+    font-size: 60px;
+  }
+  nav.main-nav li{
+    font-size: 18px;
+  }
+ 
+}
+
+@media screen and (max-width: 960px) {
+   div.welcome h2{
+    font-size: 40px;
+  }
+}
+
+/* Now, i wnt my h2Welcomec back in it's original place & put it back to relative postion and put all the text in the same font, and  put them at the center& reduce the space*/
+@media screen and (max-width: 700px) {
+  div.welcome {
+    position: relative;
+    top: -3.8px;
+    text-align: center;
+    padding: 12px;
+  }
+  /*Now i wnt all my h2 display on one line...d reason all was not on one line is br tag...To solve this grab br tag set it to div.welcome br{display:none} inside this query*/
+  div.welcome br{
+    display: none;
+  }
+  div.welcome h2{
+    font-size: 25px;
+  }
+  div.welcome h2 span{
+    font-size: 1em;
+  }
+  /*I want to sort out image*/
+  ul.images li{
+    /*I wnt to mak d width100% so that they can sit ontop of each other dply it as block*/
+    width: 100%;
+    margin: 20px auto;
+    display: block;
+  }
+}
+/*I wnt d link 2sit on each other @560px */
+@media screen and (max-width: 560px) {
+  nav.main-nav li{
+    font-size: 20px;/*this is 4mobile devices*/
+    position: relative;
+    display: block;/*so they sit on each other*/
+    width: 100%;
+    margin: 12x 0;
+  }
+  /*I wnt to change the postion d header so that it doesnt hide d rest of d banner as we scroll the page*/
+  header{
+    position: relative;
+  }
+
+  /* also makes the nav stiky wen i scroll d page up */
+  nav.main-nav{
+    top: 0;
+  }
+}
+/* Responsive images: Only load smaller images with smaller file size ..mobiledevices */
+
